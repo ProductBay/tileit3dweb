@@ -1,103 +1,119 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import Reveal from "../components/Reveal";
+// optional: if you add a Lottie animation later, uncomment this
+// import Lottie from "lottie-react";
+// import tileAnim from "../../public/tile-animation.json";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-[#0B0C10] text-white relative overflow-hidden">
+      
+      {/* HERO SECTION */}
+      <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center min-h-[90vh] px-6 pt-10 relative z-10">
+        
+        {/* Hero Text */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center md:text-left"
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-orange-500 to-teal-400 mb-6">
+            The Future of Tile Showrooms,<br /> Delivered Today
+          </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Reveal delay={0.3}>
+            <p className="max-w-2xl text-gray-300 text-lg md:text-xl mb-8">
+              Experience stunning 3D tile visualizations, seamless distributor tools, 
+              and instant financing integration. Transform the way your customers 
+              design with <span className="text-teal-400 font-semibold">Tile‑It‑3D</span>.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.6}>
+            <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+              <Link 
+                href="/distributors/demo" 
+                className="bg-teal-400 text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_25px_#00F5FF] transition transform text-center"
+              >
+                Request Demo
+              </Link>
+              <Link 
+                href="/customers/apply-card" 
+                className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_25px_#FF6B35] transition transform text-center"
+              >
+                Apply for Tile‑It Card
+              </Link>
+            </div>
+          </Reveal>
+        </motion.div>
+
+        {/* Hero Animation / Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="hidden md:block"
+        >
+          {/* Replace this with your future Lottie or image illustration */}
+          <div className="w-full h-[350px] bg-gradient-to-br from-teal-500/20 to-orange-500/20 rounded-xl border border-teal-400/20 flex items-center justify-center">
+            <span className="text-gray-500">[ Hero Animation / Illustration goes here ]</span>
+          </div>
+          {/* Example for Lottie animation:
+          <Lottie animationData={tileAnim} loop={true} />
+          */}
+        </motion.div>
+      </section>
+
+      {/* VALUE PROPS */}
+      <section className="max-w-6xl mx-auto py-20 px-6 grid md:grid-cols-3 gap-8 relative z-10">
+        {[
+          { title: "Distributor-First", desc: "Close sales faster with seamless POS integration and white‑label 3D showrooms." },
+          { title: "Customer Confidence", desc: "See every tile in stunning 3D before you buy. No more guesswork." },
+          { title: "Instant Financing", desc: "Get pre-approved instantly with the Tile‑It Card powered by Bank X." },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            className="bg-[#111] rounded-xl p-8 shadow-lg border border-gray-800 hover:scale-105 hover:border-teal-400/50 transition transform relative group"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {/* Glow effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-tr from-teal-500 to-orange-500 blur-xl transition"></div>
+            
+            <h3 className="text-2xl font-bold text-teal-400 mb-4">{item.title}</h3>
+            <p className="text-gray-300 leading-relaxed">{item.desc}</p>
+          </motion.div>
+        ))}
+      </section>
+
+      {/* CALLOUT */}
+      <section className="py-24 text-center relative z-10">
+        <Reveal>
+          <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-6">
+            Build The Future of Tile Retail With Us
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-10">
+            Partner with Tile‑It‑3D to give your distributors, designers, and customers
+            the most advanced showroom technology in the Caribbean and LATAM.
+          </p>
+        </Reveal>
+        <Reveal delay={0.4}>
+          <Link 
+            href="/distributors/demo" 
+            className="bg-gradient-to-r from-teal-400 to-orange-500 text-black px-8 py-4 rounded-xl font-bold tracking-wide hover:scale-110 hover:shadow-[0_0_40px_#00F5FF] transition transform"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            Become a Distributor
+          </Link>
+        </Reveal>
+      </section>
     </div>
   );
 }
