@@ -1,0 +1,33 @@
+/* ===== Floating Tiles Animations ===== */
+.tile {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to bottom right,
+    rgba(0, 255, 204, 0.25),
+    rgba(255, 165, 0, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  animation: floatTile 22s linear infinite;
+  opacity: 0.4;
+}
+
+.tile0 { width: 40px; height: 40px; animation-duration: 18s; }
+.tile1 { width: 50px; height: 50px; animation-duration: 22s; }
+.tile2 { width: 70px; height: 70px; animation-duration: 25s; }
+.tile3 { width: 80px; height: 80px; animation-duration: 30s; }
+.tile4 { width: 100px; height: 100px; animation-duration: 35s; }
+
+@keyframes floatTile {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-800px) rotate(360deg); opacity: 0.2; }
+}
+
+@keyframes pulseSlow {
+  0%,100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+.pulseSlow {
+  animation: pulseSlow 8s infinite alternate ease-in-out;
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // Global Components
@@ -16,25 +17,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ Updated Metadata for SEO and Credibility
 export const metadata: Metadata = {
   title: "Tile‑It‑3D | Futuristic Showrooms | Jamaica • Caribbean • LATAM",
   description:
-    "Tile‑It‑3D, founded by Ashandie Powell in St. Elizabeth, Jamaica, builds futuristic 3D tile showrooms with white‑label branding, financing integration, and photography services across the Caribbean & LATAM.",
+    "Tile‑It‑3D, founded by Ashandie Powell in St. Elizabeth, Jamaica, builds futuristic 3D tile showrooms with white‑label branding, financing integration, and photography services across the Caribbean & LATAM.",
   keywords: [
     "Tile‑It‑3D",
     "3D Tile Showroom",
     "Tile Financing Jamaica",
     "Caribbean Showroom Software",
-    "Ashandie Powell",
+    "Ashandie Powell",
     "Virtual Tile Distributor Tool",
-    "White‑Label Showroom LATAM"
+    "White‑Label Showroom LATAM",
   ],
-  authors: [{ name: "Ashandie Powell", url: "https://tileit3d.com" }],
+  authors: [{ name: "Ashandie Powell", url: "https://tileit3d.com" }],
   openGraph: {
     title: "Tile‑It‑3D | Futuristic 3D Tile Showrooms",
     description:
-      "Futuristic white‑label 3D tile showroom software with financing integration (Tile‑It‑3D Card). Built in Jamaica, scaling to the Caribbean & LATAM.",
+      "Futuristic white‑label 3D tile showroom software with financing integration (Tile‑It‑3D Card). Built in Jamaica, scaling to the Caribbean & LATAM.",
     url: "https://tileit3d.com",
     siteName: "Tile‑It‑3D",
     locale: "en_JM",
@@ -46,12 +46,10 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ Global Root Layout
+// ✅ Global Root Layout with Tess AI Agent
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
@@ -61,12 +59,18 @@ export default function RootLayout({
         <main className="pt-20">{children}</main>
         <Footer />
 
-        {/* Embedded Global Contact Info (SEO/Accessibility) */}
+        {/* Tess – Jotform AI Agent Script (loaded client‑side) */}
+        <Script
+          id="tess-agent"
+          src="https://cdn.jotfor.ms/agent/embedjs/01974e07d28b7c0c9314d538809c33368eaa/embed.js"
+          strategy="afterInteractive"
+        />
+
+        {/* Hidden footer for SEO + accessibility */}
         <footer className="hidden">
-          {/* Hidden meta content for crawlers */}
-          Tile‑It‑3D HQ: Mayfield Blvd, Southfield, St. Elizabeth, Jamaica. 
-          Founder: Ashandie Powell. 
-          Contact / WhatsApp: +1 (876) 594‑7320.
+          Tile‑It‑3D HQ: Mayfield Blvd, Southfield, St. Elizabeth, Jamaica. 
+          Founder: Ashandie Powell. 
+          Contact / WhatsApp: +1 (876) 594‑7320.
         </footer>
       </body>
     </html>
