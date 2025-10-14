@@ -8,7 +8,7 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showDistributorMenu, setShowDistributorMenu] = useState(false);
-  let hideMenuTimer;
+  let hideMenuTimer: ReturnType<typeof setTimeout>;
 
   return (
     <nav className="fixed top-0 w-full bg-[#0B0C10]/80 backdrop-blur-md z-50 border-b border-gray-800">
