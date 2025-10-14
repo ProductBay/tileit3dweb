@@ -24,10 +24,7 @@ export default function Navbar() {
               priority
             />
           </div>
-          <span className="text-2xl font-bold text-teal-400 tracking-wide">
-            Tile-It-3D
-          </span>
-        </Link>
+         </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center space-x-8 text-white font-medium">
