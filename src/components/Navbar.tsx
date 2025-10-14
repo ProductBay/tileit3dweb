@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Brand with Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative w-50 h-50">
+          <div className="relative w-35 h-35">
             <Image
               src="/tile-it-logo.png"
               alt="Tile-It-3D logo"
