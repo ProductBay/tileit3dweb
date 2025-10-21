@@ -24,63 +24,64 @@ export default function Home() {
   ))}
 </div>
 
-      {/* ===== HERO SECTION ===== */}
-      <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center min-h-[90vh] px-6 pt-10 relative z-10">
-        
-        {/* HERO TEXT */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center md:text-left"
+     {/* ===== HERO SECTION ===== */}
+<section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center min-h-[90vh] px-6 pt-10 relative z-10">
+  
+  {/* HERO TEXT */}
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1 }}
+    className="text-center md:text-left"
+  >
+    <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-orange-500 to-teal-400 mb-6">
+      The Future of Tile Showrooms,<br /> Delivered Today
+    </h1>
+
+    <Reveal delay={0.3}>
+      <p className="max-w-2xl text-gray-300 text-lg md:text-xl mb-8">
+        Experience stunning 3D tile visualizations, seamless distributor tools, 
+        and instant financing integration. Transform the way your customers 
+        design with <span className="text-teal-400 font-semibold">Tile-It-3D</span>.
+      </p>
+    </Reveal>
+
+    <Reveal delay={0.6}>
+      <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+        <Link
+          href="/distributors/demo"
+          className="bg-teal-400 text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_25px_#00F5FF] transition transform text-center"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-orange-500 to-teal-400 mb-6">
-            The Future of Tile Showrooms,<br /> Delivered Today
-          </h1>
-
-          <Reveal delay={0.3}>
-            <p className="max-w-2xl text-gray-300 text-lg md:text-xl mb-8">
-              Experience stunning 3D tile visualizations, seamless distributor tools, 
-              and instant financing integration. Transform the way your customers 
-              design with <span className="text-teal-400 font-semibold">Tile‑It‑3D</span>.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.6}>
-            <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-              <Link
-                href="/distributors/demo"
-                className="bg-teal-400 text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_25px_#00F5FF] transition transform text-center"
-              >
-                Request Demo
-              </Link>
-              <Link
-                href="/customers/apply-card"
-                className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_25px_#FF6B35] transition transform text-center"
-              >
-                Apply for Tile‑It Card
-              </Link>
-            </div>
-          </Reveal>
-        </motion.div>
-
-        {/* HERO 3D SHOWROOM EMBED */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="hidden md:block"
+          Request Demo
+        </Link>
+        <Link
+          href="/customers/apply-card"
+          className="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_25px_#FF6B35] transition transform text-center"
         >
-          <div className="w-full h-[400px] rounded-xl border border-teal-400/30 shadow-[0_0_25px_#00F5FF33] overflow-hidden backdrop-blur-sm">
-            <iframe
-              src="https://3dshowroom.netlify.app/"
-              className="w-full h-full"
-              title="Tile-It-3D Showroom"
-              allow="fullscreen; vr; xr-spatial-tracking"
-            />
-          </div>
-        </motion.div>
-      </section>
+          Apply for Tile-It Card
+        </Link>
+      </div>
+    </Reveal>
+  </motion.div>
+
+  {/* HERO VOXDECK 3D SHOWROOM EMBED */}
+  <motion.div
+    initial={{ opacity: 0, x: 50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1 }}
+    className="hidden md:block"
+  >
+    <div className="w-full h-[400px] rounded-xl border border-teal-400/30 shadow-[0_0_25px_#00F5FF33] overflow-hidden backdrop-blur-sm">
+      <iframe
+        src="https://www.voxdeck.ai/slides/3fo4k4tqv772"
+        title="Tile-It-3D VoxDeck Showroom"
+        allowFullScreen
+        className="w-full h-full"
+      />
+    </div>
+  </motion.div>
+</section>
+
 
 {/* ===== SHOWROOM VIEWS SECTION ===== */}
 <section className="relative py-28 z-10 overflow-hidden">
@@ -239,51 +240,7 @@ export default function Home() {
   ))}
 </section>
 
-{/* ===== PRESENTATION DECK ===== */}
-<section className="relative py-28 bg-[#0B0C10] text-center overflow-hidden z-10">
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-400/5 to-orange-400/10 blur-3xl"></div>
 
-  <div className="max-w-7xl mx-auto px-6 relative">
-    <motion.h2
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="text-4xl md:text-5xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-orange-400"
-    >
-      Explore the Vision
-    </motion.h2>
-
-    <p className="text-gray-400 max-w-2xl mx-auto mb-10">
-      View our official Tile‑It‑3D overview crafted with 
-      <span className="text-orange-400 font-semibold"> VoxDeck AI</span> — a
-      futuristic presentation showing how we’re transforming tile retail in Jamaica and across LATAM.
-    </p>
-
-    {/* Preview Box */}
-    <div className="max-w-4xl mx-auto rounded-2xl border border-gray-800 bg-[#111]/70 shadow-lg p-8 mb-8">
-      <div className="aspect-video w-full rounded-lg overflow-hidden border border-teal-400/30 shadow-[0_0_20px_#00F5FF22]">
-        {/* Thumbnail style placeholder */}
-        <iframe
-          src="https://www.voxdeck.ai/slides/3fo4k4tqv772"
-          title="Tile‑It‑3D VoxDeck Presentation"
-          allowFullScreen
-          className="w-full h-full"
-        />
-      </div>
-    </div>
-
-    {/* Link Button */}
-    <a
-      href="https://www.voxdeck.ai/slides/3fo4k4tqv772"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block bg-gradient-to-r from-teal-400 to-orange-500 text-black font-bold px-8 py-4 rounded-xl hover:scale-110 hover:shadow-[0_0_40px_#00F5FF99] transition"
-    >
-      🔹 View Full Presentation
-    </a>
-  </div>
-</section>
 {/* ===== WHY CHOOSE TILE-IT-3D ===== */}
 <section className="relative py-28 bg-gradient-to-b from-[#0B0C10] via-[#0F1014] to-[#0B0C10] z-10 overflow-hidden">
   {/* subtle glowing background */}
