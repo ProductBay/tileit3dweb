@@ -24,9 +24,9 @@ export default function Home() {
   ))}
 </div>
 
-     {/* ===== HERO SECTION ===== */}
+{/* ===== HERO SECTION ===== */}
 <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center min-h-[90vh] px-6 pt-10 relative z-10">
-  
+
   {/* HERO TEXT */}
   <motion.div
     initial={{ opacity: 0, x: -50 }}
@@ -64,22 +64,52 @@ export default function Home() {
     </Reveal>
   </motion.div>
 
-  {/* HERO VOXDECK 3D SHOWROOM EMBED */}
-  <motion.div
-    initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 1 }}
-    className="hidden md:block"
-  >
-    <div className="w-full h-[400px] rounded-xl border border-teal-400/30 shadow-[0_0_25px_#00F5FF33] overflow-hidden backdrop-blur-sm">
-      <iframe
-        src="https://www.voxdeck.ai/slides/3fo4k4tqv772"
-        title="Tile-It-3D VoxDeck Showroom"
-        allowFullScreen
-        className="w-full h-full"
-      />
+  {/* ===== PRESENTATION DECK (scaled-down) ===== */}
+  <div className="relative py-16 bg-[#0B0C10] text-center overflow-hidden z-10 rounded-xl">
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-400/5 to-orange-400/10 blur-3xl"></div>
+
+    <div className="max-w-3xl mx-auto px-4 relative">
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-3xl md:text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-orange-400"
+      >
+        Explore the Vision
+      </motion.h2>
+
+      <p className="text-gray-400 max-w-xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
+        View our official Tile-It-3D overview crafted with 
+        <span className="text-orange-400 font-semibold"> VoxDeck AI</span> — a
+        futuristic presentation showing how we’re transforming tile retail in Jamaica and across LATAM.
+      </p>
+
+      {/* Scaled Preview Box */}
+      <div className="max-w-2xl mx-auto rounded-xl border border-gray-800 bg-[#111]/70 shadow-lg p-4 mb-6">
+        <div className="aspect-video w-full rounded-lg overflow-hidden border border-teal-400/30 shadow-[0_0_20px_#00F5FF22]">
+          <div className="scale-[0.9] origin-top transform">
+            <iframe
+              src="https://www.voxdeck.ai/slides/3fo4k4tqv772"
+              title="Tile-It-3D VoxDeck Presentation"
+              allowFullScreen
+              className="w-[111%] h-[600px] border-0"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Link Button */}
+      <a
+        href="https://www.voxdeck.ai/slides/3fo4k4tqv772"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-gradient-to-r from-teal-400 to-orange-500 text-black font-bold px-6 py-3 rounded-lg hover:scale-110 hover:shadow-[0_0_30px_#00F5FF99] transition text-sm md:text-base"
+      >
+        🔹 View Full Presentation
+      </a>
     </div>
-  </motion.div>
+  </div>
 </section>
 
 
