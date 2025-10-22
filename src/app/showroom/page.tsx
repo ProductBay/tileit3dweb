@@ -32,7 +32,7 @@ export default function ShowroomPage() {
           className="relative w-full h-[80vh] rounded-xl overflow-hidden shadow-2xl border-2 border-[#222]"
         >
           <iframe
-            src="https://3dshowroom.netlify.app/"
+            src="https://tileit3dweb.vercel.app/showroom"
             className="w-full h-full"
             title="Tile-It-3D Showroom"
             allow="fullscreen; vr; xr-spatial-tracking"
